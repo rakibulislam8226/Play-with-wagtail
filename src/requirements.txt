@@ -6,6 +6,7 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 defusedxml==0.7.1
 Django==5.0.1
+django-dirtyfields==1.9.2
 django-filter==23.5
 django-modelcluster==6.2.1
 django-permissionedforms==0.1
