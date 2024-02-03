@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+{% image self.banner_image fill-1800x900 as banner_image %}
+
+<div class="jumbotorn" style="background: url('{{ banner_image.url}}') no-repeat; background-size: contain;">
+    <h1 class="display-4">{{ self.title}}</h1>
+    <h1 class="lead">{{ self.banner_subtitle|richtext}}</h1>
+    <a href="#" class="btn btn-primary btn-sm">@todo</a>
+
+</div>
+
+{% endblock content %}
