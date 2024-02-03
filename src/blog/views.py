@@ -7,7 +7,7 @@ from .models import BlogPage
 
 
 def blog_list(request):
-    blog_posts = BlogPage.objects.live().public()
+    blog_posts = BlogPage.objects.live().public().order_by("-created_at")
     return render(request, "blog/blog_list.html", {"blog_posts": blog_posts})
 
 

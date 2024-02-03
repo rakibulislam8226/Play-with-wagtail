@@ -9,7 +9,6 @@ class HomePage(Page):
     """Home page model."""
 
     template = "home/home_page.html"  # default template. Can be overridden in the admin
-    max_count = 1
 
     # ... other fields and methods
     banner_title = models.CharField(max_length=100, null=True)
