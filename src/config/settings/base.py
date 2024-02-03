@@ -176,13 +176,3 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
 
-
-ENABLE_SILK = os.environ.get("ENABLE_SILK", False) == "True"
-
-if ENABLE_SILK:
-    INSTALLED_APPS = [
-        "silk",
-    ] + INSTALLED_APPS
-    MIDDLEWARE = [
-        "silk.middleware.SilkyMiddleware",
-    ] + MIDDLEWARE

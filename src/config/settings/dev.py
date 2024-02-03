@@ -12,6 +12,16 @@ ALLOWED_HOSTS = ["*"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
+ENABLE_SILK = os.environ.get("ENABLE_SILK", False) == "True"
+
+if ENABLE_SILK:
+    INSTALLED_APPS = [
+        "silk",
+    ] + INSTALLED_APPS
+    MIDDLEWARE = [
+        "silk.middleware.SilkyMiddleware",
+    ] + MIDDLEWARE
+
 try:
     from .local import *
 except ImportError:
