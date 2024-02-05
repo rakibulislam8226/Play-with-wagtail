@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import truncatechars
 
 from wagtail.fields import RichTextField
 from wagtail.models import Page, Orderable
@@ -44,6 +45,14 @@ class BlogPage(BaseModelWithUID, Page):
         ]
 
     objects = Page.objects
+
+    @property
+    def short_title(self):
+        return truncatechars(self.title, 40)
+
+    @property
+    def short_intro(self):
+        return truncatechars(self.intro, 40)
 
     class Meta:
         verbose_name = "Blog Page"

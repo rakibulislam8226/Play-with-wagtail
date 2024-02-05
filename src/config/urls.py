@@ -14,7 +14,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     # include blog urls
-    path("blog/", include("blog.urls")),
+    path("blogs/", include("blog.urls")),
 ]
 
 # silk profiler
